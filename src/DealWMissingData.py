@@ -67,7 +67,7 @@ def findandfillgaps(FileIn,FileOut,TimeDifference, Bad_Data_Value):
                 if(ExpectedCurrTime ==CurrTime):
                     stringout =   CurrLine_array[0] + ',' + CurrLine_array[1] +'\n'
                 else:
-                    stringout = str(ExpectedCurrTime) +','+ str(Bad_Data_Value) + '\n'
+                    stringout = '"' + str(ExpectedCurrTime)+'"' +','+ str(Bad_Data_Value) + '\n'
                 ExpectedCurrTime = ExpectedCurrTime + datetime.timedelta(seconds = TimeDifference)
                 file_handle_out.writelines(stringout)
             Line_in += 1
